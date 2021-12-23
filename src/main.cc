@@ -3,6 +3,9 @@
 #include <iterator>
 #include <sstream>  // std::ostringstream
 #include "utils.h"
+#include <cstring> // std::memcmp
+#include <cassert> // assert
+#include "hex.h"
 
 int main() {
     // use gmssl shard lib
@@ -14,11 +17,17 @@ int main() {
 
     sm3_digest(data, datalen, dgst);
 
-    // std::ostringstream ss;
-    // std::copy(dgst, dgst+sizeof(dgst), std::ostream_iterator<int>(ss, ","));
-    // std::cout << std::hex << ss.str() << std::endl;
-
-    char buffer[sizeof(dgst)*2 + 1];
+    uint8_t buffer[sizeof(dgst)*2 + 1];
     bytes2hex(dgst, buffer, sizeof(dgst));
     printf("%s\n",buffer);
+
+    const uint8_t* expected = reinterpret_cast<const uint8_t*>("66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0");
+    printf("%s\n",expected);
+
+    const bool result = std::memcmp(buffer, expected, sizeof(buffer));
+    std::cout << "compare result : " << result << std::endl;
+
+    assert(result == 0);
+
+    std::cout << "sm3 equal." << std::endl;
 }

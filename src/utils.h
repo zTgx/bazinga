@@ -1,5 +1,5 @@
-char HexLookUp[] = "0123456789abcdef";    
-void bytes2hex (unsigned char *src, char *out, int len)
+uint8_t HexLookUp[] = "0123456789abcdef";    
+void bytes2hex (uint8_t *src, uint8_t *out, int len)
 {
     while(len--)
     {
