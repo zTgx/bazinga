@@ -6,6 +6,6 @@ int main() {
     sm3_algo();
     sm2_algo();
 
-    KeyType keyType = KeyType::guomi;
+    KeyType keyType = KeyType::sm2p256v1;
     (void)keyType;
 }
