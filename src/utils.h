@@ -1,3 +1,5 @@
+#pragma once
+
 uint8_t HexLookUp[] = "0123456789abcdef";    
 void bytes2hex (uint8_t *src, uint8_t *out, int len)
 {
@@ -9,4 +11,3 @@ void bytes2hex (uint8_t *src, uint8_t *out, int len)
     }
     *out = 0;
 }
-

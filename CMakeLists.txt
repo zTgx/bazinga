@@ -3,7 +3,6 @@ project(TinyGmssl)
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-set(CMAKE_CXX_FLAGSD "${CMAKE_CXX_FLAGS} -O0 -Wall -g -ggdb")
 
 link_directories(/home/ztgx/workspace/ssl-workplace/guomi/gmssl-v3-dev/build/lib)
 
