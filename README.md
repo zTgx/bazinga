@@ -1,1 +1,3 @@
-tiny gmssl demo using gmssl-v3
+* secp256k1
+* ed25519
+* sm2p256v1
